@@ -240,8 +240,7 @@ script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1295611163]
 sprite_frames = SubResource("SpriteFrames_l5lc7")
-animation = &"idle"
-frame_progress = 0.76982415
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=456498564]
 y_sort_enabled = true
@@ -252,3 +251,5 @@ shape = SubResource("CircleShape2D_5a7ea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox" unique_id=1910081268]
 shape = SubResource("CircleShape2D_l5lc7")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=497359421]
