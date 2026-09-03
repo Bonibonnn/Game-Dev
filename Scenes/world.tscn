@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://coy050b0rjmhd" path="res://Terrain/Island_24x24.png" id="1_5a7ea"]
 [ext_resource type="Texture2D" uid="uid://y2cm0ejjay3b" path="res://Terrain/decor.png" id="2_8j60k"]
 [ext_resource type="PackedScene" uid="uid://d30nugf2k2pr1" path="res://Scenes/player.tscn" id="3_fo5ed"]
+[ext_resource type="PackedScene" uid="uid://6imp8q0vekre" path="res://Scenes/skeleton.tscn" id="4_8j60k"]
+[ext_resource type="Script" uid="uid://dc8l0c4vuxuuu" path="res://Scripts/skeleton_spawner.gd" id="6_5ukr8"]
+[ext_resource type="PackedScene" uid="uid://4o1uhbipphl7" path="res://Scenes/necromancer.tscn" id="7_o06y3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5a7ea"]
 texture = ExtResource("1_5a7ea")
@@ -161,8 +164,14 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5a7ea")
 sources/1 = SubResource("TileSetAtlasSource_8j60k")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5lc7"]
+size = Vector2(15, 86)
+
 [node name="world" type="Node2D" unique_id=1812078328]
 y_sort_enabled = true
+
+[node name="necromancer" parent="." unique_id=1113116547 instance=ExtResource("7_o06y3")]
+position = Vector2(1128, 357)
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1797540686]
 y_sort_enabled = true
@@ -176,5 +185,45 @@ layer_2/name = "ysort"
 layer_2/y_sort_enabled = true
 layer_2/tile_data = PackedInt32Array(1179652, 196609, 3, 1048584, 196609, 3, 1245196, 196609, 3, 1114127, 196609, 3, 1114132, 196609, 3, 1114139, 196609, 3, 458780, 196609, 3, 1179684, 196609, 3, 1179692, 196609, 3, 1376302, 196609, 3, 1507375, 196609, 3, 917555, 196609, 3, 983099, 196609, 3, 983107, 196609, 3, 1048631, 196609, 3, 1245241, 196609, 3, 1245245, 196609, 3, 1179713, 196609, 3, 1966134, 196609, 3, 2162754, 196609, 3, 1835068, 196609, 3, 2097211, 196609, 3, 1835077, 196609, 3, 2097227, 196609, 3, 2097234, 196609, 3, 2228295, 196609, 3, 983115, 196609, 3, 1048658, 196609, 3, 1245258, 196609, 3, 1310801, 196609, 3, 852006, 196609, 2, 1245207, 65537, 2, 1310752, 65537, 2, 1179718, 65537, 2, 1769547, 65537, 2, 1769521, 65537, 2, 1572914, 65537, 2, 589842, 65537, 2, 524323, 65537, 2)
 
+[node name="skeleton" parent="." unique_id=930479232 instance=ExtResource("4_8j60k")]
+position = Vector2(343, 120)
+
+[node name="skeleton2" parent="." unique_id=383271636 instance=ExtResource("4_8j60k")]
+position = Vector2(290, 183)
+
+[node name="skeleton3" parent="." unique_id=677718380 instance=ExtResource("4_8j60k")]
+position = Vector2(295, 125)
+
+[node name="skeleton4" parent="." unique_id=459668411 instance=ExtResource("4_8j60k")]
+position = Vector2(348, 180)
+
 [node name="player" parent="." unique_id=969721258 instance=ExtResource("3_fo5ed")]
 position = Vector2(34, 163)
+
+[node name="collision" type="StaticBody2D" parent="." unique_id=1705958284]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collision" unique_id=109192830]
+polygon = PackedVector2Array(-3, -2, 215, 0, 434, 0, 582, -1, 714, -3, 716, 125, 866, 125, 1026, 125, 1149, 125, 1278, 125, 1468, 127, 1433, 202, 1394, 323, 1437, 322, 1435, 363, 1391, 362, 1434, 436, 1531, 476, 1532, 546, 1357, 550, 1358, 566, 1074, 564, 1075, 549, 939, 548, 706, 549, 705, 389, 543, 390, 289, 389, -12, 393, -12, 278, -12, 62, -12, -31, -85, 125, -97, 381, 65, 468, 248, 495, 470, 611, 760, 721, 1136, 686, 1507, 665, 1719, 656, 1654, 420, 1617, 200, 1515, 26, 1175, 28, 922, -41, 752, -136, 596, -111, 355, -107, 133, -134, 63, -113, -55, -93, -13, -47, 9, -37, 0, -1)
+
+[node name="skeleton_spawner" type="Area2D" parent="." unique_id=1445837336]
+collision_layer = 3
+script = ExtResource("6_5ukr8")
+skeleton_scene = ExtResource("4_8j60k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="skeleton_spawner" unique_id=695521985]
+position = Vector2(503, 158)
+shape = SubResource("RectangleShape2D_l5lc7")
+debug_color = Color(0.911681, 0, 0.17255759, 0.41960785)
+
+[node name="spawn_point" type="Marker2D" parent="skeleton_spawner" unique_id=1248262042]
+position = Vector2(559, 161)
+
+[node name="spawn_point4" type="Marker2D" parent="skeleton_spawner" unique_id=1583602463]
+position = Vector2(559, 133)
+
+[node name="spawn_point2" type="Marker2D" parent="skeleton_spawner" unique_id=580339531]
+position = Vector2(559, 181)
+
+[node name="spawn_point3" type="Marker2D" parent="skeleton_spawner" unique_id=925749524]
+position = Vector2(560, 147)
