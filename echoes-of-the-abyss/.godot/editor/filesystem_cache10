@@ -1,0 +1,16 @@
+78098b89c88a74ebe8c20117b8754620
+::res://::1784198411
+::res://art/::1784196717
+Orc.png::CompressedTexture2D::1008153564873650748::1784196588::1784196717::1::::<><><>0<>0<>e2a0e15af1d3b586108aa81730555795<>res://.godot/imported/Orc.png-199c373d44455dd03e8603af9e44139b.ctex::
+Soldier.png::CompressedTexture2D::9078642269317064110::1784196588::1784196717::1::::<><><>0<>0<>99dc330c0417b7487cef852dd0a5fa95<>res://.godot/imported/Soldier.png-b6602d4d5547fa40980c096720d8175e.ctex::
+::res://Scenes/::1784196588
+enemy.tscn::PackedScene::4505049595946779641::1784196588::0::1::::<><><>0<>0<><>::uid://cnewb3gy3apup::::res://Scripts/enemy.gd<>uid://omme3cblc6oe::::res://art/Orc.png
+player.tscn::PackedScene::9176984477685088176::1784196588::0::1::::<><><>0<>0<><>::uid://dtpubhp8g7w0p::::res://Scripts/player.gd<>uid://d2l06aagkbanm::::res://art/Soldier.png
+world.tscn::PackedScene::1779178433877109345::1784196588::0::1::::<><><>0<>0<><>::uid://coy050b0rjmhd::::res://Terrain/Island_24x24.png<>uid://y2cm0ejjay3b::::res://Terrain/decor.png<>uid://d30nugf2k2pr1::::res://Scenes/player.tscn<>uid://b5gjrj87k2kij::::res://Scenes/enemy.tscn
+::res://Scripts/::1784196588
+enemy.gd::GDScript::5694892886382145459::1784196588::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.gd::GDScript::8525032264506237561::1784196588::0::1::::<>CharacterBody2D<><>0<>0<><>::
+::res://Terrain/::1784196717
+decor.png::CompressedTexture2D::1740414629868728649::1784196588::1784196717::1::::<><><>0<>0<>6396e95aac423cc1c1c7c3a7896269f4<>res://.godot/imported/decor.png-5e2d3028f0e7d0f0aa45a73055217a82.ctex::
+icon.svg::CompressedTexture2D::6327586292595849185::1784196588::1784196717::1::::<><><>0<>0<>84b7480a12f65bb409241f5f96d0a7aa<>res://.godot/imported/icon.svg-dabd759bd28c179c91329159d9db52a0.ctex::
+Island_24x24.png::CompressedTexture2D::5806603058839927769::1784196588::1784196717::1::::<><><>0<>0<>c3a91dabf80d101087517d769189637c<>res://.godot/imported/Island_24x24.png-5f4a4a461e887ac0fa7e24ea1523539e.ctex::
